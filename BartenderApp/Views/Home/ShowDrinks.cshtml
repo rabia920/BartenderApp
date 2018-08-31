@@ -1,0 +1,29 @@
+﻿@model DrinksModel
+
+
+<form asp-action="OrderDrinks" method="post">
+    <label> Order Drink!</label>
+    <select name="DrinkName">
+        <option selected disabled>Choose a Drink</option>
+        @foreach (var Drink in Model.Drinks)
+        {
+            <option>@Drink</option>
+
+        }
+
+    </select>
+
+
+    <button type="submit">Submit Order</button>
+    <button>Cancel Order</button>
+
+
+
+</form>
+
+<br />
+<br />
+<form asp-action="GetQueue" method="get">
+    <button type="submit"> Get Queue </button>
+</form>
+

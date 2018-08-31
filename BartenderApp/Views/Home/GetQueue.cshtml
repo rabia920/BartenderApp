@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Order>
+
+
+
+
+
+@if (Model.Count() == 0)
+{
+
+    <h1> Nothing exists</h1>
+}
+
+else
+{
+    @foreach (var localName in Model)
+    {
+        <form asp-action="Delete" method="post">
+            <h1>@localName.DrinkName</h1>
+            <h3>@localName.orderTime</h3>
+            <input hidden value=@localName.OrderId name="Id" />
+            <button type="submit">Delete</button>
+        </form>
+    }
+
+
+
+}
+
+
+
+
+
+
+
+

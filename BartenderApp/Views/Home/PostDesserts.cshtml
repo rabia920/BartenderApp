@@ -1,0 +1,34 @@
+﻿@model string[]
+
+
+<h2>Send an order to the database</h2>
+<form asp-action="PostDessert" method="post">
+
+    <label> Order Dessert!</label>
+    <select name="DessertName">
+
+        <option selected disabled>Choose a Dessert</option>
+        @foreach (var localDessertName in Model)
+        {
+            <option>@localDessertName</option>
+
+        }
+
+    </select>
+
+
+    <button type="submit">Submit Order</button>
+    <button>Cancel Order</button>
+
+
+
+</form>
+
+<br />
+<br />
+
+<form asp-action="PostDessert" method="post">
+    <button type="submit"> Order a Dessert </button>
+</form>
+
+
